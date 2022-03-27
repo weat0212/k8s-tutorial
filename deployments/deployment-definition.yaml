@@ -17,6 +17,7 @@ spec:
       containers:
         - name: nginx-container
           image: nginx
+#          image: nginx:1.9.1
           imagePullPolicy: IfNotPresent
       restartPolicy: Always
   selector:
