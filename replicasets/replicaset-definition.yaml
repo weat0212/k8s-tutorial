@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: andy-shopping-app
+  labels:
+    app: shopping-cart
+    function: front-end
+  annotations:
+    buildversion: '1.01'
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: shopping-cart
+  template:
+    metadata:
+      labels:
+        app: shopping-cart
+        function: front-end
+    spec:
+      containers:
+        - name: andy-shopping-app
+          image: wordpress
+
+
