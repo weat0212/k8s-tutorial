@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    name: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      imagePullPolicy: IfNotPresent
+  restartPolicy: Always
+  nodeName: node02
+  tolerations:
+    - key: "tainted"
+      operator: "Equal"
+      value: "scandal"
+      effect: "NoSchedule"
