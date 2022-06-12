@@ -16,3 +16,5 @@ spec:
       operator: "Equal"
       value: "scandal"
       effect: "NoSchedule"
+  nodeSelector:
+    size: Large
