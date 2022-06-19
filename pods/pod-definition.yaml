@@ -9,6 +9,12 @@ spec:
     - name: nginx
       image: nginx
       imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 8080
+      resources:
+        requests:
+          memory: "1Gi"
+          cpu: "1"
   restartPolicy: Always
   nodeName: node02
   tolerations:
