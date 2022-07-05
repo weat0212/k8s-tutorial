@@ -6,16 +6,8 @@ metadata:
     app: simple-website
 spec:
   containers:
-    - name: simple-website
-      image: simple-website
-      ports:
-        - containerPort: 8080
-      env:
-        - name: PROFILE
-          valueFrom:
-            configMapKeyRef:
-              key: prod
-
-      envFrom:
-        - configMapRef:
-            name: app_mode
+  - envFrom:
+    - configMapRef:
+        name: app-config
+    image: simple-website
+    name: simple-website
